@@ -10,4 +10,4 @@ Mobile-first personal finance web app. React + TypeScript + Vite + Supabase.
 
 ## Honest status
 See the status table in the project chat. Nothing here is certified, audited or legally reviewed.
-Before real users or real money: get legal, privacy, security and payments review for India.
+Before real users or real money: get legal, privacy, security and payments review for India..
