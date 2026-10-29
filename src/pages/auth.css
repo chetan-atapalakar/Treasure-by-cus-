@@ -1,0 +1,204 @@
+.auth {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  padding: calc(env(safe-area-inset-top, 0px) + var(--space-6)) var(--space-4)
+    calc(env(safe-area-inset-bottom, 0px) + var(--space-6));
+}
+
+.auth__card {
+  width: 100%;
+  max-width: 440px;
+  padding: var(--space-8) var(--space-6);
+  border-radius: var(--radius-lg);
+  background: var(--color-background);
+  box-shadow: var(--shadow-raised);
+  animation: auth-in var(--duration-slow) var(--ease-editorial) both;
+}
+
+.auth__brand {
+  margin: 0;
+  font-family: var(--font-editorial);
+  font-size: var(--text-3xl);
+  font-weight: var(--weight-semibold);
+  line-height: var(--leading-tight);
+}
+
+.auth__descriptor {
+  margin: var(--space-1) 0 var(--space-6);
+  font-size: 0.625rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.auth__h {
+  margin: 0 0 var(--space-2);
+  font-size: var(--text-xl);
+  font-weight: var(--weight-semibold);
+}
+
+.auth__p {
+  margin: 0 0 var(--space-5);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+}
+
+.field__label {
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+}
+
+.field__row {
+  display: flex;
+  gap: var(--space-3);
+}
+
+.input {
+  min-height: 52px;
+  padding: 0 var(--space-4);
+  border: 0;
+  border-radius: var(--radius-md);
+  background: var(--color-background);
+  box-shadow: var(--shadow-inset);
+  color: var(--color-text);
+  font: inherit;
+  font-size: var(--text-base);
+  width: 100%;
+}
+
+.input::placeholder {
+  color: var(--color-text-muted);
+}
+
+.input[aria-invalid="true"] {
+  box-shadow: var(--shadow-inset), 0 0 0 2px var(--color-expense-text);
+}
+
+.input--otp {
+  text-align: center;
+  font-size: var(--text-2xl);
+  font-weight: var(--weight-semibold);
+  letter-spacing: 0.5em;
+  padding-left: calc(var(--space-4) + 0.5em);
+  font-variant-numeric: tabular-nums;
+}
+
+.select {
+  flex: none;
+  width: 116px;
+}
+
+.check {
+  display: flex;
+  gap: var(--space-3);
+  align-items: flex-start;
+  margin-bottom: var(--space-5);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+.check input {
+  flex: none;
+  width: 22px;
+  height: 22px;
+  margin-top: 1px;
+  accent-color: var(--color-nav-text);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 52px;
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: var(--color-nav);
+  color: var(--color-sidebar);
+  font: inherit;
+  font-size: var(--text-base);
+  font-weight: var(--weight-semibold);
+  box-shadow: var(--shadow-raised-sm);
+  cursor: pointer;
+  transition: box-shadow var(--duration-fast) var(--ease-standard),
+    transform var(--duration-fast) var(--ease-standard);
+}
+
+.btn:hover:not(:disabled) {
+  box-shadow: var(--shadow-raised);
+}
+
+.btn:active:not(:disabled) {
+  transform: translateY(1px);
+  box-shadow: var(--shadow-inset);
+}
+
+.btn:disabled {
+  background: var(--color-date);
+  color: var(--color-text-muted);
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.btn--ghost {
+  margin-top: var(--space-3);
+  background: transparent;
+  box-shadow: none;
+  color: var(--color-nav-text);
+  border: 1px solid var(--color-nav-text);
+}
+
+.btn--ghost:hover:not(:disabled) {
+  box-shadow: none;
+  background: rgba(62, 195, 213, 0.12);
+}
+
+.btn--ghost:disabled {
+  background: transparent;
+  border-color: var(--color-date);
+}
+
+.msg {
+  margin: 0 0 var(--space-4);
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-sm);
+  font-size: var(--text-sm);
+}
+
+.msg--error {
+  background: #fff1f2;
+  color: var(--color-expense-text);
+  border: 1px solid var(--color-expense-text);
+}
+
+.msg--info {
+  background: var(--color-background);
+  box-shadow: var(--shadow-inset);
+  color: var(--color-text-muted);
+}
+
+.auth__fine {
+  margin: var(--space-5) 0 0;
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+@keyframes auth-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
