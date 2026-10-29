@@ -4,6 +4,7 @@ import {
   CalendarDays,
   Crown,
   FileText,
+  Gift,
   Landmark,
   LayoutDashboard,
   Settings,
@@ -33,5 +34,6 @@ export const NAV_ITEMS: NavItem[] = [
   { to: "/statements", label: "Statements", icon: FileText },
   { to: "/notifications", label: "Notifications", icon: Bell },
   { to: "/premium", label: "Premium", icon: Crown },
+  { to: "/referrals", label: "Referrals", icon: Gift },
   { to: "/settings", label: "Settings", icon: Settings },
 ];
