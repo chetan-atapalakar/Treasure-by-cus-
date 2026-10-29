@@ -695,7 +695,14 @@ export default function Dashboard() {
                   })}
                 </ul>
               ) : (
-                <p className="empty">
-                  Savings goals are not available yet. They
-                  arrive in a later batch.
+  <p className="empty">
+    Savings goals are not available yet. They
+    arrive in a later batch.
+  </p>
+)}
+</section>
+</div>
+</main>
+);
+}
          
