@@ -5,12 +5,14 @@ import ProtectedRoute from "../components/layout/ProtectedRoute";
 import PlaceholderPage, { NotFound } from "../pages/PlaceholderPage";
 import Login from "../pages/Login";
 import VerifyOTP from "../pages/VerifyOTP";
-import Settings from "../pages/Settings";
 
 const Dashboard = lazy(() => import("../pages/Dashboard"));
 const Transactions = lazy(() => import("../pages/Transactions"));
 const Accounts = lazy(() => import("../pages/Accounts"));
 const Notifications = lazy(() => import("../pages/Notifications"));
+const Budgets = lazy(() => import("../pages/Budgets"));
+const Goals = lazy(() => import("../pages/Goals"));
+const Settings = lazy(() => import("../pages/Settings"));
 
 const placeholder = (path: string, title: string, phase: string, description: string) => ({
   path,
@@ -32,13 +34,13 @@ export const router = createBrowserRouter([
       { path: "transactions", element: <Transactions /> },
       { path: "accounts", element: <Accounts /> },
       { path: "notifications", element: <Notifications /> },
-      placeholder("calendar", "Financial calendar", "Phase 2", "Bills, EMIs, subscriptions and milestones on a timeline."),
-      placeholder("budgets", "Budgets", "Batch 4", "Monthly and category budgets with threshold alerts."),
-      placeholder("goals", "Savings goals", "Batch 4", "Targets, contributions and progress."),
-      placeholder("statements", "Statements", "Phase 3", "View in-app statements and generate PDFs."),
+      { path: "budgets", element: <Budgets /> },
+      { path: "goals", element: <Goals /> },
+      { path: "settings", element: <Settings /> },
+      placeholder("calendar", "Financial calendar", "Batch 5", "Bills, EMIs, subscriptions and milestones on a timeline."),
+      placeholder("statements", "Statements", "Batch 5", "View in-app statements and generate PDFs."),
       placeholder("assistant", "AI assistant", "Phase 3", "Needs a secure backend and AI provider credentials."),
       placeholder("premium", "Premium", "Phase 4", "Plans and billing, verified server-side."),
-      { path: "settings", element: <Settings /> },
       { path: "*", element: <NotFound /> },
     ],
   },
