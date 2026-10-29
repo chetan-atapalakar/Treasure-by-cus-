@@ -1,0 +1,87 @@
+.quote {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  padding: var(--space-8) var(--space-4);
+  text-align: center;
+}
+
+.quote--fullscreen {
+  min-height: 60vh;
+}
+
+.quote__marks {
+  display: flex;
+  gap: var(--space-1);
+  font-family: var(--font-editorial);
+  line-height: 0.8;
+  height: 1em;
+  font-size: 4.5rem;
+}
+
+.quote--sm .quote__marks {
+  font-size: 2.25rem;
+}
+
+.quote--lg .quote__marks {
+  font-size: 6rem;
+}
+
+.quote__mark {
+  display: inline-block;
+  animation: quote-rise var(--duration-quote) var(--ease-editorial) infinite both;
+}
+
+.quote__mark--open {
+  color: var(--color-sidebar);
+}
+
+.quote__mark--close {
+  color: var(--color-nav);
+  animation-name: quote-rise-accent;
+  animation-delay: 180ms;
+}
+
+.quote__msg {
+  margin: 0;
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+/* Start and end states are fully visible so reduced motion shows a clean static mark. */
+@keyframes quote-rise {
+  0%,
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  35% {
+    opacity: 0.35;
+    transform: translateY(-10px);
+  }
+  65% {
+    opacity: 0.8;
+    transform: translateY(2px);
+  }
+}
+
+@keyframes quote-rise-accent {
+  0%,
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    color: var(--color-nav);
+  }
+  35% {
+    opacity: 0.35;
+    transform: translateY(-10px);
+    color: var(--color-nav);
+  }
+  65% {
+    opacity: 0.9;
+    transform: translateY(2px);
+    color: var(--color-sidebar);
+  }
+}
