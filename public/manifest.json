@@ -1,0 +1,18 @@
+{
+  "name": "CüS Treasure",
+  "short_name": "Treasure",
+  "description": "Treasure by CüS Studio — personal finance companion.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#F7F7FA",
+  "theme_color": "#23273C",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
