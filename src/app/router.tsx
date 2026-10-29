@@ -8,6 +8,9 @@ import VerifyOTP from "../pages/VerifyOTP";
 import Settings from "../pages/Settings";
 
 const Dashboard = lazy(() => import("../pages/Dashboard"));
+const Transactions = lazy(() => import("../pages/Transactions"));
+const Accounts = lazy(() => import("../pages/Accounts"));
+const Notifications = lazy(() => import("../pages/Notifications"));
 
 const placeholder = (path: string, title: string, phase: string, description: string) => ({
   path,
@@ -26,14 +29,14 @@ export const router = createBrowserRouter([
     ),
     children: [
       { index: true, element: <Dashboard /> },
-      placeholder("transactions", "Transactions", "Batch 3", "Add, edit, search and filter your transactions."),
+      { path: "transactions", element: <Transactions /> },
+      { path: "accounts", element: <Accounts /> },
+      { path: "notifications", element: <Notifications /> },
       placeholder("calendar", "Financial calendar", "Phase 2", "Bills, EMIs, subscriptions and milestones on a timeline."),
-      placeholder("budgets", "Budgets", "Phase 2", "Monthly and category budgets with threshold alerts."),
-      placeholder("goals", "Savings goals", "Phase 2", "Targets, contributions and progress."),
-      placeholder("accounts", "Accounts", "Batch 3", "Track the accounts you choose to record."),
+      placeholder("budgets", "Budgets", "Batch 4", "Monthly and category budgets with threshold alerts."),
+      placeholder("goals", "Savings goals", "Batch 4", "Targets, contributions and progress."),
       placeholder("statements", "Statements", "Phase 3", "View in-app statements and generate PDFs."),
       placeholder("assistant", "AI assistant", "Phase 3", "Needs a secure backend and AI provider credentials."),
-      placeholder("notifications", "Notifications", "Batch 3", "Notification centre with read and unread states."),
       placeholder("premium", "Premium", "Phase 4", "Plans and billing, verified server-side."),
       { path: "settings", element: <Settings /> },
       { path: "*", element: <NotFound /> },
