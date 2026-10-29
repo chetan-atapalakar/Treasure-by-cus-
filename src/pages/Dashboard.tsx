@@ -347,7 +347,9 @@ export default function Dashboard() {
                   })}
                 </ul>
               ) : (
-                <p className="empty">Savings goals are not available yet. They arrive in a later batch.</p>
+                <p <p className="empty">
+  Your goals and contributions live on the <Link to="/goals">Goals page</Link>.
+</p>
               )}
             </section>
           </div>
