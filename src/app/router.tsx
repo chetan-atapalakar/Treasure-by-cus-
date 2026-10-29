@@ -2,7 +2,7 @@ import { lazy } from "react";
 import { createBrowserRouter } from "react-router-dom";
 import AppLayout from "../components/layout/AppLayout";
 import ProtectedRoute from "../components/layout/ProtectedRoute";
-import PlaceholderPage, { NotFound } from "../pages/PlaceholderPage";
+import { NotFound } from "../pages/PlaceholderPage";
 import Login from "../pages/Login";
 import VerifyOTP from "../pages/VerifyOTP";
 
@@ -13,11 +13,12 @@ const Notifications = lazy(() => import("../pages/Notifications"));
 const Budgets = lazy(() => import("../pages/Budgets"));
 const Goals = lazy(() => import("../pages/Goals"));
 const Settings = lazy(() => import("../pages/Settings"));
-
-const placeholder = (path: string, title: string, phase: string, description: string) => ({
-  path,
-  element: <PlaceholderPage title={title} phase={phase} description={description} />,
-});
+const Calendar = lazy(() => import("../pages/Calendar"));
+const Statements = lazy(() => import("../pages/Statements"));
+const Assistant = lazy(() => import("../pages/Assistant"));
+const Premium = lazy(() => import("../pages/Premium"));
+const Referrals = lazy(() => import("../pages/Referrals"));
+const Admin = lazy(() => import("../pages/Admin"));
 
 export const router = createBrowserRouter([
   { path: "/login", element: <Login /> },
@@ -36,11 +37,13 @@ export const router = createBrowserRouter([
       { path: "notifications", element: <Notifications /> },
       { path: "budgets", element: <Budgets /> },
       { path: "goals", element: <Goals /> },
+      { path: "calendar", element: <Calendar /> },
+      { path: "statements", element: <Statements /> },
+      { path: "assistant", element: <Assistant /> },
+      { path: "premium", element: <Premium /> },
+      { path: "referrals", element: <Referrals /> },
+      { path: "admin", element: <Admin /> },
       { path: "settings", element: <Settings /> },
-      placeholder("calendar", "Financial calendar", "Batch 5", "Bills, EMIs, subscriptions and milestones on a timeline."),
-      placeholder("statements", "Statements", "Batch 5", "View in-app statements and generate PDFs."),
-      placeholder("assistant", "AI assistant", "Phase 3", "Needs a secure backend and AI provider credentials."),
-      placeholder("premium", "Premium", "Phase 4", "Plans and billing, verified server-side."),
       { path: "*", element: <NotFound /> },
     ],
   },
